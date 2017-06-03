@@ -26,6 +26,8 @@ namespace Truii_Demo_App
 		
 		public static void UpdateIdValues()
 		{
+			global::DSoft.UI.Resource.Drawable.checkmark = global::Truii_Demo_App.Resource.Drawable.checkmark;
+			global::DSoft.UI.Resource.String.library_name = global::Truii_Demo_App.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
@@ -45,7 +47,10 @@ namespace Truii_Demo_App
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int checkmark = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
 			
 			static Drawable()
 			{
@@ -53,6 +58,25 @@ namespace Truii_Demo_App
 			}
 			
 			private Drawable()
+			{
+			}
+		}
+		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f050001
+			public const int dataGrid = 2131034113;
+			
+			// aapt resource value: 0x7f050000
+			public const int graphBtn = 2131034112;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
 			{
 			}
 		}
@@ -76,11 +100,14 @@ namespace Truii_Demo_App
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040002
+			public const int ApplicationName = 2130968578;
+			
 			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			public const int Hello = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int library_name = 2130968576;
 			
 			static String()
 			{
