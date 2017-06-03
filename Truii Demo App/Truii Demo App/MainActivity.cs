@@ -13,7 +13,7 @@ using AChartEngine.Charts;
 
 namespace Truii_Demo_App
 {
-    [Activity(Label = "Truii_Demo_App", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Truii", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         DSGridView dsGrid;
