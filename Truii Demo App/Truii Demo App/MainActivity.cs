@@ -47,7 +47,7 @@ namespace Truii_Demo_App
             if (dsGrid != null)
             {
                 dsGrid.DataSource = new DataSet(this, mP_Fst, mP_Snd, mP_Trd);
-                dsGrid.TableName = "PDT";
+                dsGrid.TableName = "DT";
             }
         }
 
