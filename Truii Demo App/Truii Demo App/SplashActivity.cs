@@ -22,7 +22,7 @@ namespace Truii_Demo_App
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Splash);
 
-            await Task.Delay(8000);
+            await Task.Delay(1000);
             
             StartActivity(new Intent(Application.Context, typeof(HomeActivity)));
         }

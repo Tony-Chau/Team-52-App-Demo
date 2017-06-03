@@ -4,11 +4,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <dsoft.ui.grid.DSGridView
+        android:id="@+id/dataGrid"
+        android:layout_width="match_parent" 
+        android:layout_height="350dp"
+        />
     <Button
-        android:id="@+id/graphBtn"
+        android:id="@+id/CollectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Collect More Data"
+        android:textAlignment="center"
+        android:layout_gravity="bottom"
+        android:layout_margin="25dp"
+        tools:context=".HomeActivity" />
+    <Button
+        android:id="@+id/GraphBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View in Line Graph"
         android:textAlignment="center"
+        android:layout_gravity="bottom"
+        android:layout_margin="25dp"
         tools:context=".HomeActivity" />
 </LinearLayout>

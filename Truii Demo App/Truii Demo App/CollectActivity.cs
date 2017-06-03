@@ -22,10 +22,10 @@ namespace Truii_Demo_App
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Collect);
 
-            Button btn = FindViewById<Button>(Resource.Id.graphBtn);
+            Button btn = FindViewById<Button>(Resource.Id.FinishBtn);
             btn.Click += (s, e) =>
             {
-                
+                Finish();
             };
 
         }

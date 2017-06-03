@@ -4,14 +4,14 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark">
+    android:background="@android:color/background_dark" 
+    >
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:scaleType="center"
         android:src="@drawable/truii_logo"
-        android:layout_marginTop="@android:dimen/dialog_min_width_major"
         android:scaleX="2"
         android:scaleY="2" />
 </LinearLayout>

@@ -68,11 +68,17 @@ namespace Truii_Demo_App
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int dataGrid = 2131034113;
+			// aapt resource value: 0x7f050002
+			public const int CollectBtn = 2131034114;
 			
 			// aapt resource value: 0x7f050000
-			public const int graphBtn = 2131034112;
+			public const int FinishBtn = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int GraphBtn = 2131034115;
+			
+			// aapt resource value: 0x7f050001
+			public const int dataGrid = 2131034113;
 			
 			static Id()
 			{
@@ -91,13 +97,10 @@ namespace Truii_Demo_App
 			public const int Collect = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Grid = 2130903041;
+			public const int Home = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Home = 2130903042;
-			
-			// aapt resource value: 0x7f030003
-			public const int Splash = 2130903043;
+			public const int Splash = 2130903042;
 			
 			static Layout()
 			{
