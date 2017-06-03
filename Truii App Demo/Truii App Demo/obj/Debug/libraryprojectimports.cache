@@ -1,8 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars></Jars>
-  <ResolvedResourceDirectories />
-  <ResolvedAssetDirectories />
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\System.Data.Portable\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\System.Transactions.Portable\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.Design\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\System.Data.Portable\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\System.Transactions.Portable\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
-  <ResolvedResourceDirectoryStamps />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\System.Data.Portable.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\System.Transactions.Portable.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\Apps\Truii Demo\Truii App Demo\Truii App Demo\obj\Debug\__library_projects__\Xamarin.Android.Support.Design.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
 </Paths>
