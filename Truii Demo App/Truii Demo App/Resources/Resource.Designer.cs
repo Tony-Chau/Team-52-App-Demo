@@ -52,6 +52,9 @@ namespace Truii_Demo_App
 			// aapt resource value: 0x7f020001
 			public const int Icon = 2130837505;
 			
+			// aapt resource value: 0x7f020002
+			public const int truii_logo = 2130837506;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -85,7 +88,16 @@ namespace Truii_Demo_App
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Collect = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Grid = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Home = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Splash = 2130903043;
 			
 			static Layout()
 			{

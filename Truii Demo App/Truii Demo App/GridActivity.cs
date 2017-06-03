@@ -13,8 +13,8 @@ using AChartEngine.Charts;
 
 namespace Truii_Demo_App
 {
-    [Activity(Label = "Truii", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "Truii", MainLauncher = false, Icon = "@drawable/icon")]
+    public class GridActivity : Activity
     {
         DSGridView dsGrid;
         static int numOfMonths = 12;
@@ -31,7 +31,7 @@ namespace Truii_Demo_App
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Grid);
 
             monthsProfitInit(mP_Fst);
             monthsProfitInit(mP_Snd);
