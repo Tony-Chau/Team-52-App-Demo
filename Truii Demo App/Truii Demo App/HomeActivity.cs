@@ -20,6 +20,7 @@ namespace Truii_Demo_App
         DSGridView dsGrid;
         Button btnCollect;
         Button btnGraph;
+        Button btnExport;
         Button btnReset;
         DataDB db;
 
@@ -46,6 +47,9 @@ namespace Truii_Demo_App
             btnGraph = FindViewById<Button>(Resource.Id.btnGraph);
             btnGraph.Click += BtnGraph_Click;
 
+            btnExport = FindViewById<Button>(Resource.Id.btnExport);
+            btnExport.Click += BtnExport_Click;
+
             btnReset = FindViewById<Button>(Resource.Id.btnReset);
             btnReset.Click += BtnReset_Click;
         }
@@ -68,6 +72,11 @@ namespace Truii_Demo_App
         private void BtnGraph_Click(object sender, EventArgs e)
         {
             LineGraph();
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
@@ -99,7 +108,9 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This Function uses data from the database to consrtuct a graph
+        /// Using the three: DataOne, DataTwo and DataThree as the series
+        /// Renders all the code into into a graph for data visualization
         /// </summary>
         private void LineGraph()
         {
@@ -118,13 +129,14 @@ namespace Truii_Demo_App
             mRenderer.XLabels = 0;
             mRenderer.ChartTitle = "Data Chart";
             mRenderer.XTitle = "UserID";
-            mRenderer.YTitle = "Num of Data's";
+            mRenderer.YTitle = "Data Inputs";
             mRenderer.AxisTitleTextSize = 32;
             mRenderer.ChartTitleTextSize = 40;
             mRenderer.LabelsTextSize = 20;
             mRenderer.LegendTextSize = 20;
             mRenderer.PointSize = 3;
             mRenderer.ZoomButtonsVisible = true;
+            
             mRenderer.BackgroundColor = Color.Transparent;
             mRenderer.AxesColor = Color.DarkGray;
             mRenderer.LabelsColor = Color.LightGray;
@@ -141,10 +153,12 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This code is an efficient way of mass producing series for the graph
+        /// Using the information from a certain column and collects all the data
+        /// to input into the series
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">Name of the Column of the Data as well as the Name of the newly created series</param>
+        /// <returns>Returns the new series which contains information from the database</returns>
         public XYSeries SeriesCreate(string name)
         {
             XYSeries series = new XYSeries(name);
@@ -156,12 +170,12 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This code creates a renderer for a series
         /// </summary>
-        /// <param name="Red"></param>
-        /// <param name="Green"></param>
-        /// <param name="Blue"></param>
-        /// <returns></returns>
+        /// <param name="Red">A Colour Code used to define the Series Renderer visually</param>
+        /// <param name="Green">A Colour Code used to define the Series Renderer visually</param>
+        /// <param name="Blue">A Colour Code used to define the Series Renderer visually</param>
+        /// <returns>Returns the Renderer after setting all the desired traits</returns>
         public XYSeriesRenderer singleRenderer(int Red, int Green, int Blue)
         {
             XYSeriesRenderer sRender = new XYSeriesRenderer();
