@@ -27,7 +27,7 @@ namespace Truii_Demo_App
 
             btnFinish = FindViewById<Button>(Resource.Id.btnFinish);
             btnFinish.Click += BtnFinish_Click;
-
+            btnFinish.Enabled = false;
             dataOne = FindViewById<EditText>(Resource.Id.txtDataOne);
             dataTwo = FindViewById<EditText>(Resource.Id.txtDataTwo);
             dataThree = FindViewById<EditText>(Resource.Id.txtDataThree);
@@ -39,13 +39,9 @@ namespace Truii_Demo_App
 
         private void AfterTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
         {
-            if (dataOne.Text.Length > 1 || dataTwo.Text.Length > 1 || dataThree.Text.Length > 1)
+            if (dataOne.Text.Length > 0 && dataTwo.Text.Length > 0 && dataThree.Text.Length > 0)
             {
-                btnFinish.Enabled = false;
-            }
-            else
-            {
-                btnFinish.Enabled = true;
+                btnFinish.Enabled = true; //This was meant to be true lol
             }
         }
 
