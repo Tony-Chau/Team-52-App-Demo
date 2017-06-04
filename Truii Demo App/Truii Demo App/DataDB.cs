@@ -26,9 +26,17 @@ namespace Truii_Demo_App
             docsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             path = System.IO.Path.Combine(docsFolder, "DataDB.db");
             connection = new SqliteConnection("Data Source=" + path);
+            
         }
         public async void CreateDatabase()
         {
+            try
+            {
+                SqliteConnection.CreateFile(path);
+            }catch (IOException ex)
+            {
+                Toast.MakeText(this.context, ex.Message, ToastLength.Short).Show();
+            }
             connection.Open();
             try
             {
