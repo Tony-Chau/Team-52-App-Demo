@@ -7,4 +7,5 @@ Please go to settings, then to secuirty and then click on "Unknown sources".
 Android APK: https://drive.google.com/open?id=0BwKSsYk6BCZJMU9XR3NwbW5Xd2s
 
 The instruction is on the .zip file 
+
 Thank you from Team 52
