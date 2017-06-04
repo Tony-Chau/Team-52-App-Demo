@@ -18,7 +18,7 @@ namespace Truii_Demo_App
     public class SplashActivity : Activity
     {
         /// <summary>
-        /// As a Splash Screen the App Waits on this page for a period of time and goes into the home page
+        /// As a Splash Screen the App Waits on this page for a period of time then opens the home page
         /// </summary>
         /// <param name="bundle">Used for Generating the page</param>
         protected override async void OnCreate(Bundle bundle)

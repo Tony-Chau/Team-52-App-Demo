@@ -25,8 +25,10 @@ namespace Truii_Demo_App
         Button btnExport;
         Button btnReset;
         DataDB db;
+
         /// <summary>
-        /// 
+        /// This Code Assigns all the buttons to the respective code and assigns the grid
+        /// to the initialized spreadsheet
         /// </summary>
         /// <param name="bundle">Used for Generating the page</param>
         protected override void OnCreate(Bundle bundle)
@@ -56,7 +58,7 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This Function Navigates the User to the Collecting Data Page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -66,7 +68,7 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This Function Calls the Graph Function
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -75,6 +77,11 @@ namespace Truii_Demo_App
             LineGraph();
         }
 
+        /// <summary>
+        /// This Function Exports a csv file to the device's local storage 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnExport_Click(object sender, EventArgs e)
         {
             File store = Android.OS.Environment.ExternalStorageDirectory;
@@ -91,6 +98,11 @@ namespace Truii_Demo_App
             alert.SetMessage("File is located at: " + dir.ToString() + "/DataTableExample.csv");
             alert.Show();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private string csvCode()
         {
             string file = "UserID, DataOne, DataTwo, DataThree\n";
@@ -104,6 +116,12 @@ namespace Truii_Demo_App
             return file;
         }
 
+        /// <summary>
+        /// This Function wipes all information from the database to 
+        /// reset it then updates the page with the OnResume();
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnReset_Click(object sender, EventArgs e)
         {
             db.CreateDatabase();
@@ -111,7 +129,7 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// The Function used to constantly update the page for whatever changes
         /// </summary>
         protected override void OnResume()
         {

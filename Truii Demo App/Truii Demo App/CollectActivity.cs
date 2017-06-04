@@ -23,7 +23,7 @@ namespace Truii_Demo_App
         EditText dataThree;
 
         /// <summary>
-        /// 
+        /// This Code Assigns all the buttons and edittext to the respective code
         /// </summary>
         /// <param name="bundle">Used for Generating the page</param>
         protected override void OnCreate(Bundle bundle)
@@ -44,7 +44,8 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This Function is used to confirm when the user has filled in all
+        /// the input lines and enables the button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -61,7 +62,8 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// This function inserts the inputted information into the database and 
+        /// closes the activity
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
