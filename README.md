@@ -4,7 +4,7 @@ This will only work on Android devices and please use an android device when you
 
 Please go to settings, then to secuirty and then click on "Unknown sources". 
 
-Android APK: https://drive.google.com/open?id=0BwKSsYk6BCZJOTJ4NTJxaUN3QWc
+Android APK: https://drive.google.com/open?id=0BwKSsYk6BCZJNDlCdld1em0xYmM
 
 The instruction is on the .zip file 
 
