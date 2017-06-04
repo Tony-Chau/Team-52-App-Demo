@@ -16,19 +16,39 @@ namespace Truii_Demo_App
     [Activity(Label = "Truii", MainLauncher = false, Icon = "@drawable/icon")]
     public class CollectActivity : Activity
     {
-        
+        Button btnFinish;
+        EditText dataOne;
+        EditText dataTwo;
+        EditText dataThree;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Collect);
 
-            Button btnFinish = FindViewById<Button>(Resource.Id.FinishBtn);
+            btnFinish = FindViewById<Button>(Resource.Id.FinishBtn);
             btnFinish.Click += BtnFinish_Click;
+
+            dataOne = FindViewById<EditText>(Resource.Id.DataWan);
+            dataTwo = FindViewById<EditText>(Resource.Id.DataToo);
+            dataThree = FindViewById<EditText>(Resource.Id.DataEee);
         }
 
         private void BtnFinish_Click(object sender, EventArgs e)
         {
             Finish();
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            if (dataOne.Text == "" || dataTwo.Text == "" || dataThree.Text == "")
+            {
+                btnFinish.Enabled = false;
+            }
+            else
+            {
+                btnFinish.Enabled = true;
+            }
         }
     }
 }

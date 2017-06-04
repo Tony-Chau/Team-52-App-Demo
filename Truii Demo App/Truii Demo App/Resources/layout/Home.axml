@@ -7,23 +7,32 @@
     <dsoft.ui.grid.DSGridView
         android:id="@+id/dataGrid"
         android:layout_width="match_parent"
-        android:layout_height="1250px" />
-    <Button
-        android:id="@+id/CollectBtn"
+        android:layout_height="1000px" />
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Collect More Data"
-        android:textAlignment="center"
-        android:layout_gravity="bottom"
-        android:layout_margin="25px"
-        tools:context=".HomeActivity" />
-    <Button
-        android:id="@+id/GraphBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="View in Line Graph"
-        android:textAlignment="center"
-        android:layout_gravity="bottom"
-        android:layout_margin="25px"
-        tools:context=".HomeActivity" />
+        android:fillViewport="true" >
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/CollectBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Collect More Data"
+                android:textAlignment="center"
+                android:layout_gravity="bottom"
+                android:layout_margin="25px"
+                tools:context=".HomeActivity" />
+            <Button
+                android:id="@+id/GraphBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View in Line Graph"
+                android:textAlignment="center"
+                android:layout_gravity="bottom"
+                android:layout_margin="25px"
+                tools:context=".HomeActivity" />
+        </TableLayout>
+    </ScrollView>
 </LinearLayout>

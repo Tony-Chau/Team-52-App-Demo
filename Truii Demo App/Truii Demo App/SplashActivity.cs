@@ -23,7 +23,6 @@ namespace Truii_Demo_App
             SetContentView (Resource.Layout.Splash);
             await Task.Delay(1000);
             DataDB db = new DataDB(this);
-            db.CreateDatabase();
             if (!db.checkDb())
             {
                 db.CreateDatabase();
