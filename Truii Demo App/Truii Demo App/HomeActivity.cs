@@ -17,8 +17,11 @@ namespace Truii_Demo_App
     public class HomeActivity : Activity
     {
         DSGridView dsGrid;
+        Button btnCollect;
+        Button btnGraph;
+
         static int numOfMonths = 12;
-        private int listnum = 19;
+        private int listnum = 0;
         Random rand = new Random();
         private string[] Months = new string[]
         {
@@ -34,10 +37,6 @@ namespace Truii_Demo_App
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Home);
 
-            monthsProfitInit(mP_Fst);
-            monthsProfitInit(mP_Snd);
-            monthsProfitInit(mP_Trd);
-
             dsGrid = FindViewById<DSGridView>(Resource.Id.dataGrid);
             if (dsGrid != null)
             {
@@ -45,10 +44,10 @@ namespace Truii_Demo_App
                 dsGrid.TableName = "DT";
             }
 
-            Button btnCollect = FindViewById<Button>(Resource.Id.CollectBtn);
+            btnCollect = FindViewById<Button>(Resource.Id.CollectBtn);
             btnCollect.Click += BtnCollect_Click;
 
-            Button btnGraph = FindViewById<Button>(Resource.Id.GraphBtn);
+            btnGraph = FindViewById<Button>(Resource.Id.GraphBtn);
             btnGraph.Click += BtnGraph_Click;
         }
 
@@ -70,6 +69,15 @@ namespace Truii_Demo_App
                 dsGrid.DataSource = new DataSet(this, listnum);
                 dsGrid.TableName = "DT";
             }
+
+            if (listnum < 2)
+            {
+                btnGraph.Enabled = false;
+            }
+            else
+            {
+                btnGraph.Enabled = true;
+            }
         }
 
         public void listIncrement()
@@ -90,6 +98,10 @@ namespace Truii_Demo_App
         {
 
             int[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+
+            monthsProfitInit(mP_Fst);
+            monthsProfitInit(mP_Snd);
+            monthsProfitInit(mP_Trd);
 
             XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
 

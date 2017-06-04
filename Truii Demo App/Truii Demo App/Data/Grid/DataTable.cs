@@ -24,10 +24,10 @@ namespace Truii_Demo_App.Data.Grid
         {
             var dataColumns = new Dictionary<string, float>();
 
-            dataColumns.Add("  Year", 100);
-            dataColumns.Add("Youtubers", 100);
-            dataColumns.Add("Workers", 100);
-            dataColumns.Add("Students", 100);
+            dataColumns.Add("  UserId", 100);
+            dataColumns.Add("Data1", 100);
+            dataColumns.Add("Data2", 100);
+            dataColumns.Add("Data3", 100);
 
             foreach (var key in dataColumns.Keys)
             {
@@ -50,10 +50,10 @@ namespace Truii_Demo_App.Data.Grid
                 var dataRows = new DSDataRow();
 
                 YWS(Y_W_S);
-                dataRows["  Year"] = "  " + (Loop + 2017);
-                dataRows["Youtubers"] = Y_W_S[0];
-                dataRows["Workers"] = Y_W_S[1];
-                dataRows["Students"] = Y_W_S[2];
+                dataRows["  UserID"] = "  " + (Loop + 2017);
+                dataRows["Data1"] = Y_W_S[0];
+                dataRows["Data2"] = Y_W_S[1];
+                dataRows["Data3"] = Y_W_S[2];
 
                 Rows.Add(dataRows);
             }

@@ -22,12 +22,13 @@ namespace Truii_Demo_App
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Collect);
 
-            Button btn = FindViewById<Button>(Resource.Id.FinishBtn);
-            btn.Click += (s, e) =>
-            {
-                Finish();
-            };
+            Button btnFinish = FindViewById<Button>(Resource.Id.FinishBtn);
+            btnFinish.Click += BtnFinish_Click;
+        }
 
+        private void BtnFinish_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }
