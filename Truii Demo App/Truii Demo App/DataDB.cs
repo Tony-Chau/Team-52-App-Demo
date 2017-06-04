@@ -30,6 +30,7 @@ namespace Truii_Demo_App
         }
         public async void CreateDatabase()
         {
+            var connectionString = string.Format("Data Source={0};Version=3", path);
             try
             {
                 SqliteConnection.CreateFile(path);
@@ -40,7 +41,7 @@ namespace Truii_Demo_App
             connection.Open();
             try
             {
-                using (var connect = new SqliteConnection(connection))
+                using (var connect = new SqliteConnection((connectionString)))
                 {
                     await connect.OpenAsync();
                     using (var command = connect.CreateCommand())

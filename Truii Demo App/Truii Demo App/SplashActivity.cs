@@ -24,6 +24,10 @@ namespace Truii_Demo_App
             await Task.Delay(1000);
             DataDB db = new DataDB(this);
             db.CreateDatabase();
+            if (!db.checkDb())
+            {
+                db.CreateDatabase();
+            }
             StartActivity(new Intent(Application.Context, typeof(HomeActivity)));
         }
         
