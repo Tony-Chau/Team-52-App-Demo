@@ -50,7 +50,7 @@ namespace Truii_Demo_App.Data.Grid
             {
                 var dataRows = new DSDataRow();
 
-                dataRows["  UserID"] = "  " + (db.readData("UserID", Loop));
+                dataRows["  UserID"] = "  " + (db.readPrimary("UserID", Loop));
                 dataRows["DataOne"] = db.readData("DataOne", Loop);
                 dataRows["DataTwo"] = db.readData("DataTwo", Loop);
                 dataRows["DataThree"] = db.readData("DataThree", Loop);

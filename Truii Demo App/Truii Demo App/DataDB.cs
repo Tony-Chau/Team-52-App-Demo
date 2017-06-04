@@ -41,7 +41,7 @@ namespace Truii_Demo_App
         /// <returns></returns>
         public int readData(string fieldName, int index)
         {
-            int[] data = new int[Count()];
+            List<int> data = new List<int>();
             connection.Open();
             try
             {
@@ -50,11 +50,9 @@ namespace Truii_Demo_App
                     
                     command.CommandText = "SELECT * FROM Data";
                     var read = command.ExecuteReader();
-                    int i = 0;
                     while (read.Read())
                     {
-                        data[i] = (int) read[fieldName];
-                        i += 1;
+                        data.Add((int)read[fieldName]);
                     }
                     connection.Close();
                     return data[index];
@@ -66,6 +64,39 @@ namespace Truii_Demo_App
             }
             connection.Close();
             return -1;
+        }
+
+        /// <summary>
+        /// This returns the primary key as a string 
+        /// </summary>
+        /// <param name="fieldName">The primary key name</param>
+        /// <param name="index">index number</param>
+        /// <returns>The primary key element</returns>
+        public string readPrimary(string fieldName, int index)
+        {
+            List<string> data = new List<string>();
+            connection.Open();
+            try
+            {
+                using (var command = connection.CreateCommand())
+                {
+
+                    command.CommandText = "SELECT * FROM Data";
+                    var read = command.ExecuteReader();
+                    while (read.Read())
+                    {
+                        data.Add(read[fieldName].ToString());
+                    }
+                    connection.Close();
+                    return data[index];
+                }
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(context, ex.Message, ToastLength.Short).Show();
+            }
+            connection.Close();
+            return "";
         }
 
         /// <summary>
@@ -89,7 +120,7 @@ namespace Truii_Demo_App
                     await connect.OpenAsync();
                     using (var command = connect.CreateCommand())
                     {
-                        string QueryCommand = "CREATE TABLE Data(UserID int NOT NULL, DataOne int NOT NULL, DataTwo int NOT NULL, DataThree int NOT NULL)";
+                        string QueryCommand = "CREATE TABLE Data(UserID INTEGER PRIMARY KEY AUTOINCREMENT, DataOne int NOT NULL, DataTwo int NOT NULL, DataThree int NOT NULL)";
                         command.CommandText = QueryCommand;
                         command.CommandType = System.Data.CommandType.Text;
                         await command.ExecuteNonQueryAsync();

@@ -31,7 +31,7 @@ namespace Truii_Demo_App
             {
                 db.CreateDatabase();
             }
-            //db.CreateDatabase();
+            db.CreateDatabase();
             StartActivity(new Intent(Application.Context, typeof(HomeActivity)));
         }
         
