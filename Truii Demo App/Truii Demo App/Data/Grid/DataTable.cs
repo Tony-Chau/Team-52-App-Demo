@@ -20,14 +20,15 @@ namespace Truii_Demo_App.Data.Grid
 
         }
 
-        public DataTable(String Name, int y) : base(Name)
+        public DataTable(Context context, String Name) : base(Name)
         {
-            var dataColumns = new Dictionary<string, float>();
+            DataDB db = new DataDB(context);
 
+            var dataColumns = new Dictionary<string, float>();
             dataColumns.Add("  UserId", 100);
-            dataColumns.Add("Data1", 100);
-            dataColumns.Add("Data2", 100);
-            dataColumns.Add("Data3", 100);
+            dataColumns.Add("DataOne", 100);
+            dataColumns.Add("DataTwo", 100);
+            dataColumns.Add("DataThree", 100);
 
             foreach (var key in dataColumns.Keys)
             {
@@ -40,33 +41,16 @@ namespace Truii_Demo_App.Data.Grid
                 Columns.Add(dc);
             }
 
-            int[] Y_W_S = new int[3];
-            Y_W_S[0] = 50000;
-            Y_W_S[1] = 250000;
-            Y_W_S[2] = 75000;
-
-            for (int Loop = 0; Loop < y; Loop++)
+            for (int Loop = 0; Loop < db.Count(); Loop++)
             {
                 var dataRows = new DSDataRow();
 
-                YWS(Y_W_S);
-                dataRows["  UserID"] = "  " + (Loop + 2017);
-                dataRows["Data1"] = Y_W_S[0];
-                dataRows["Data2"] = Y_W_S[1];
-                dataRows["Data3"] = Y_W_S[2];
+                dataRows["  UserID"] = "  " + (db.readData("UserID", Loop));
+                dataRows["DataOne"] = db.readData("DataOne", Loop);
+                dataRows["DataTwo"] = db.readData("DataTwo", Loop);
+                dataRows["DataThree"] = db.readData("DataThree", Loop);
 
                 Rows.Add(dataRows);
-            }
-        }
-
-        public void YWS(int[] num)
-        {
-            int maxInc = 500;
-            //Random rand = new Random();
-            for (int i = 0; i < num.Length; i++)
-            {
-                //num[i] += rand.Next(maxInc);
-                num[i] += maxInc;
             }
         }
     }

@@ -20,28 +20,18 @@ namespace Truii_Demo_App
         DSGridView dsGrid;
         Button btnCollect;
         Button btnGraph;
-
-        static int numOfMonths = 12;
-        private int listnum = 0;
-        Random rand = new Random();
-        private string[] Months = new string[]
-        {
-            "Jan", "Feb" , "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug" , "Sep", "Oct", "Nov", "Dec"
-        };
-        private int[] mP_Fst = new int[numOfMonths];
-        private int[] mP_Snd = new int[numOfMonths];
-        private int[] mP_Trd = new int[numOfMonths];
-
+        DataDB db;
+        
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Home);
+            db = new DataDB(this);
 
             dsGrid = FindViewById<DSGridView>(Resource.Id.dataGrid);
             if (dsGrid != null)
             {
-                dsGrid.DataSource = new DataSet(this, listnum);
+                dsGrid.DataSource = new DataSet(this);
                 dsGrid.TableName = "DT";
             }
             dsGrid.SetMinimumHeight(Resources.DisplayMetrics.HeightPixels / 2);
@@ -55,7 +45,6 @@ namespace Truii_Demo_App
         private void BtnCollect_Click(object sender, EventArgs e)
         {
             StartActivity(new Intent(Application.Context, typeof(CollectActivity)));
-            listIncrement();
         }
 
         private void BtnGraph_Click(object sender, EventArgs e)
@@ -67,11 +56,11 @@ namespace Truii_Demo_App
             base.OnResume();
             if (dsGrid != null)
             {
-                dsGrid.DataSource = new DataSet(this, listnum);
+                dsGrid.DataSource = new DataSet(this);
                 dsGrid.TableName = "DT";
             }
 
-            if (listnum < 2)
+            if (db.Count() < 2)
             {
                 btnGraph.Enabled = false;
             }
@@ -81,54 +70,24 @@ namespace Truii_Demo_App
             }
         }
 
-        public void listIncrement()
-        {
-            listnum++;
-        }
-
-        public void monthsProfitInit(int[] months)
-        {
-            int maxProfit = 10000;
-            for (int i = 0; i < numOfMonths; i++)
-            {
-                months[i] = rand.Next(maxProfit);
-            }
-        }
-
         private void LineGraph()
         {
-
-            int[] x = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-
-            monthsProfitInit(mP_Fst);
-            monthsProfitInit(mP_Snd);
-            monthsProfitInit(mP_Trd);
-
             XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
+            
+            dataSet.AddSeries(SeriesCreate("DataOne"));
+            dataSet.AddSeries(SeriesCreate("DataTwo"));
+            dataSet.AddSeries(SeriesCreate("DataThree"));
 
-            XYSeries mP_FstSeries = new XYSeries("Year 2017");
-            XYSeries mP_SndSeries = new XYSeries("Year 2018");
-            XYSeries mP_TrdSeries = new XYSeries("Year 2019");
-            for (int i = 0; i < x.Length; i++)
-            {
-                mP_FstSeries.Add(i, mP_Fst[i]);
-                mP_SndSeries.Add(i, mP_Snd[i]);
-                mP_TrdSeries.Add(i, mP_Trd[i]);
-            }
-            dataSet.AddSeries(mP_FstSeries);
-            dataSet.AddSeries(mP_SndSeries);
-            dataSet.AddSeries(mP_TrdSeries);
-
-            XYSeriesRenderer renderFst = singleRenderer(255, 255, 000);
-            XYSeriesRenderer renderSnd = singleRenderer(000, 255, 000);
-            XYSeriesRenderer renderTrd = singleRenderer(000, 255, 255);
+            XYSeriesRenderer renderOne = singleRenderer(255, 255, 000);
+            XYSeriesRenderer renderTwo = singleRenderer(000, 255, 000);
+            XYSeriesRenderer renderThree = singleRenderer(000, 255, 255);
 
             XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
             mRenderer.SetMargins(new int[] { 20, 30, 20, 10 });
             mRenderer.XLabels = 0;
-            mRenderer.ChartTitle = "Monthly Profit";
-            mRenderer.XTitle = "Months";
-            mRenderer.YTitle = "Profits ($)";
+            mRenderer.ChartTitle = "Data Chart";
+            mRenderer.XTitle = "UserID";
+            mRenderer.YTitle = "Num of Data's";
             mRenderer.AxisTitleTextSize = 32;
             mRenderer.ChartTitleTextSize = 40;
             mRenderer.LabelsTextSize = 20;
@@ -138,16 +97,26 @@ namespace Truii_Demo_App
             mRenderer.BackgroundColor = Color.Transparent;
             mRenderer.AxesColor = Color.DarkGray;
             mRenderer.LabelsColor = Color.LightGray;
-            for (int i = 0; i < x.Length; i++)
+            for (int i = 0; i < db.Count(); i++)
             {
-                mRenderer.AddXTextLabel(i, Months[i]);
+                mRenderer.AddXTextLabel(i, db.readData("UserID", i).ToString());
             }
-            mRenderer.AddSeriesRenderer(renderFst);
-            mRenderer.AddSeriesRenderer(renderSnd);
-            mRenderer.AddSeriesRenderer(renderTrd);
+            mRenderer.AddSeriesRenderer(renderOne);
+            mRenderer.AddSeriesRenderer(renderTwo);
+            mRenderer.AddSeriesRenderer(renderThree);
 
             Intent intent = ChartFactory.GetLineChartIntent(this, dataSet, mRenderer);
             StartActivity(intent);
+        }
+
+        public XYSeries SeriesCreate(string name)
+        {
+            XYSeries series = new XYSeries(name);
+            for (int i = 0; i < db.Count(); i++)
+            {
+                series.Add(i, db.readData(name, i));
+            }
+            return null;
         }
 
         public XYSeriesRenderer singleRenderer(int Red, int Green, int Blue)

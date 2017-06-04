@@ -15,9 +15,9 @@ namespace Truii_Demo_App.Data.Grid
 {
     public class DataSet : DSDataSet
     {
-        public DataSet(Context EntryCode, int y)
+        public DataSet(Context EntryCode)
         {
-            Tables.Add(new DataTable("DT", y));
+            Tables.Add(new DataTable(EntryCode, "DT"));
         }
     }
 }

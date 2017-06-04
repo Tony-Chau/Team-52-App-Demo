@@ -10,6 +10,7 @@ using Android.Graphics;
 using Android.Content;
 using AChartEngine;
 using AChartEngine.Charts;
+using Java.Lang;
 
 namespace Truii_Demo_App
 {
@@ -43,10 +44,21 @@ namespace Truii_Demo_App
             {
                 btnFinish.Enabled = true; //This was meant to be true lol
             }
+            else
+            {
+                btnFinish.Enabled = false;
+            }
         }
 
         private void BtnFinish_Click(object sender, EventArgs e)
         {
+            DataDB db = new DataDB(this);
+
+            int intDataOne = Integer.ParseInt(dataOne.Text);
+            int intDataTwo = Integer.ParseInt(dataTwo.Text);
+            int intDataThree = Integer.ParseInt(dataThree.Text);
+            
+            db.InserData(intDataOne, intDataTwo, intDataThree);
             Finish();
         }
     }
