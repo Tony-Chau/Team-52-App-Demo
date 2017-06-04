@@ -45,20 +45,23 @@ namespace Truii_Demo_App
                 dsGrid.TableName = "DT";
             }
 
-            Button pbtn = FindViewById<Button>(Resource.Id.CollectBtn);
-            pbtn.Click += (s, e) =>
-            {
-                StartActivity(new Intent(Application.Context, typeof(CollectActivity)));
-                listIncrement();
-            };
+            Button btnCollect = FindViewById<Button>(Resource.Id.CollectBtn);
+            btnCollect.Click += BtnCollect_Click;
 
-            Button btn = FindViewById<Button>(Resource.Id.GraphBtn);
-            btn.Click += (s, e) =>
-            {
-                LineGraph();
-            };
+            Button btnGraph = FindViewById<Button>(Resource.Id.GraphBtn);
+            btnGraph.Click += BtnGraph_Click;
         }
 
+        private void BtnCollect_Click(object sender, EventArgs e)
+        {
+            StartActivity(new Intent(Application.Context, typeof(CollectActivity)));
+            listIncrement();
+        }
+
+        private void BtnGraph_Click(object sender, EventArgs e)
+        {
+            LineGraph();
+        }      
         protected override void OnResume()
         {
             base.OnResume();
