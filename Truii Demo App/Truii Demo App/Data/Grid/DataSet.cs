@@ -15,6 +15,10 @@ namespace Truii_Demo_App.Data.Grid
 {
     public class DataSet : DSDataSet
     {
+        /// <summary>
+        /// This will initilize the spreadsheet
+        /// </summary>
+        /// <param name="EntryCode">This role of this parameter is to transfer the context into the DataTable</param>
         public DataSet(Context EntryCode)
         {
             Tables.Add(new DataTable(EntryCode, "DT"));

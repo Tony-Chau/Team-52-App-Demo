@@ -21,7 +21,11 @@ namespace Truii_Demo_App
         Button btnCollect;
         Button btnGraph;
         DataDB db;
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bundle">Used for Generating the page</param>
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -42,15 +46,29 @@ namespace Truii_Demo_App
             btnGraph.Click += BtnGraph_Click;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCollect_Click(object sender, EventArgs e)
         {
             StartActivity(new Intent(Application.Context, typeof(CollectActivity)));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnGraph_Click(object sender, EventArgs e)
         {
             LineGraph();
         }      
+
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void OnResume()
         {
             base.OnResume();
@@ -70,6 +88,9 @@ namespace Truii_Demo_App
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void LineGraph()
         {
             XYMultipleSeriesDataset dataSet = new XYMultipleSeriesDataset();
@@ -109,6 +130,11 @@ namespace Truii_Demo_App
             StartActivity(intent);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public XYSeries SeriesCreate(string name)
         {
             XYSeries series = new XYSeries(name);
@@ -116,9 +142,16 @@ namespace Truii_Demo_App
             {
                 series.Add(i, db.readData(name, i));
             }
-            return null;
+            return series;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Red"></param>
+        /// <param name="Green"></param>
+        /// <param name="Blue"></param>
+        /// <returns></returns>
         public XYSeriesRenderer singleRenderer(int Red, int Green, int Blue)
         {
             XYSeriesRenderer sRender = new XYSeriesRenderer();

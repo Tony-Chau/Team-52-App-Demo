@@ -20,12 +20,17 @@ namespace Truii_Demo_App.Data.Grid
 
         }
 
+        /// <summary>
+        /// Initializes the Table within the Spreadsheet and inputs the information from the Database
+        /// </summary>
+        /// <param name="context">This will be used for calling the functions from the DataDB</param>
+        /// <param name="Name">This is used to name the table and used to call this specific Table from another part of the project</param>
         public DataTable(Context context, String Name) : base(Name)
         {
             DataDB db = new DataDB(context);
 
             var dataColumns = new Dictionary<string, float>();
-            dataColumns.Add("  UserId", 100);
+            dataColumns.Add("  UserId", 75);
             dataColumns.Add("DataOne", 100);
             dataColumns.Add("DataTwo", 100);
             dataColumns.Add("DataThree", 100);

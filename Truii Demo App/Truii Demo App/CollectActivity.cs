@@ -21,6 +21,11 @@ namespace Truii_Demo_App
         EditText dataOne;
         EditText dataTwo;
         EditText dataThree;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bundle">Used for Generating the page</param>
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -38,6 +43,11 @@ namespace Truii_Demo_App
             dataThree.AfterTextChanged += AfterTextChanged;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AfterTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
         {
             if (dataOne.Text.Length > 0 && dataTwo.Text.Length > 0 && dataThree.Text.Length > 0)
@@ -50,6 +60,11 @@ namespace Truii_Demo_App
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnFinish_Click(object sender, EventArgs e)
         {
             DataDB db = new DataDB(this);

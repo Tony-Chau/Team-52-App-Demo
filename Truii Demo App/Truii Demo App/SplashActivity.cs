@@ -17,6 +17,10 @@ namespace Truii_Demo_App
     [Activity(Label = "Truii", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.NoTitleBar.Fullscreen")]
     public class SplashActivity : Activity
     {
+        /// <summary>
+        /// As a Splash Screen the App Waits on this page for a period of time and goes into the home page
+        /// </summary>
+        /// <param name="bundle">Used for Generating the page</param>
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -27,7 +31,7 @@ namespace Truii_Demo_App
             {
                 db.CreateDatabase();
             }
-            db.CreateDatabase();
+            //db.CreateDatabase();
             StartActivity(new Intent(Application.Context, typeof(HomeActivity)));
         }
         
