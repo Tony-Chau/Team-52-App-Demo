@@ -31,17 +31,15 @@ namespace Truii_Demo_App
             dataOne = FindViewById<EditText>(Resource.Id.txtDataOne);
             dataTwo = FindViewById<EditText>(Resource.Id.txtDataTwo);
             dataThree = FindViewById<EditText>(Resource.Id.txtDataThree);
+
+            dataOne.AfterTextChanged += AfterTextChanged;
+            dataTwo.AfterTextChanged += AfterTextChanged;
+            dataThree.AfterTextChanged += AfterTextChanged;
         }
 
-        private void BtnFinish_Click(object sender, EventArgs e)
+        private void AfterTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
         {
-            Finish();
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
-            if (dataOne.Text == "" || dataTwo.Text == "" || dataThree.Text == "")
+            if (dataOne.Text.Length > 1 || dataTwo.Text.Length > 1 || dataThree.Text.Length > 1)
             {
                 btnFinish.Enabled = false;
             }
@@ -49,6 +47,11 @@ namespace Truii_Demo_App
             {
                 btnFinish.Enabled = true;
             }
+        }
+
+        private void BtnFinish_Click(object sender, EventArgs e)
+        {
+            Finish();
         }
     }
 }
