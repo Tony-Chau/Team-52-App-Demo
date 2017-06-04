@@ -78,21 +78,17 @@ namespace Truii_Demo_App
         private void BtnExport_Click(object sender, EventArgs e)
         {
             File store = Android.OS.Environment.ExternalStorageDirectory;
-            File dir = new File(store.AbsoluteFile + "/Truii App Demo");
-            dir.Mkdirs();
+            File dir = new File(store.AbsoluteFile.ToString());
             File file = new File(dir, "DataTableExample.csv");
-            if (!file.Exists())
-            {
-                file.CreateNewFile();
-                file.Mkdirs();
-                FileWriter writer = new FileWriter(file);
-                writer.Write(csvCode());
-                writer.Flush();
-                writer.Close();
-            }
+            file.CreateNewFile();
+            file.Mkdirs();
+            FileWriter writer = new FileWriter(file);
+            writer.Write(csvCode());
+            writer.Flush();
+            writer.Close();
             var alert = new AlertDialog.Builder(this);
             alert.SetTitle("A file has been created");
-            alert.SetMessage("File is located at: " + dir.ToString());
+            alert.SetMessage("File is located at: " + dir.ToString() + "/DataTableExample.csv");
             alert.Show();
         }
         private string csvCode()
