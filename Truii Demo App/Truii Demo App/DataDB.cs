@@ -183,7 +183,7 @@ namespace Truii_Demo_App
             {
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandText = string.Format("INSERT INTO Data(UserID, DataOne, DataTwo, DataThree) VALUES( {0}, {1}, {2}, {3})", count, dataOne, dataTwo, dataThree);
+                    command.CommandText = string.Format("INSERT INTO Data(DataOne, DataTwo, DataThree) VALUES( {0}, {1}, {2})", dataOne, dataTwo, dataThree);
                     var rowcount = command.ExecuteNonQuery();
                 }
             }catch (Exception ex)
