@@ -84,15 +84,20 @@ namespace Truii_Demo_App
         /// <param name="e"></param>
         private void BtnExport_Click(object sender, EventArgs e)
         {
+            //Gets the file path
             File store = Android.OS.Environment.ExternalStorageDirectory;
             File dir = new File(store.AbsoluteFile.ToString());
+            //Creates a new file
             File file = new File(dir, "DataTableExample.csv");
             file.CreateNewFile();
             file.Mkdirs();
+            //Writes the .csv code into the .csv file
             FileWriter writer = new FileWriter(file);
+            //File is being written
             writer.Write(csvCode());
             writer.Flush();
             writer.Close();
+            //Alerts the user the file has been gerneated
             var alert = new AlertDialog.Builder(this);
             alert.SetTitle("A file has been created");
             alert.SetMessage("File is located at: " + dir.ToString() + "/DataTableExample.csv");
@@ -100,9 +105,9 @@ namespace Truii_Demo_App
         }
 
         /// <summary>
-        /// 
+        /// The csv export code
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The csv code of the data fromt the database</returns>
         private string csvCode()
         {
             string file = "UserID, DataOne, DataTwo, DataThree\n";
