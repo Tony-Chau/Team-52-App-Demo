@@ -20,6 +20,7 @@ namespace Truii_Demo_App
         DSGridView dsGrid;
         Button btnCollect;
         Button btnGraph;
+        Button btnReset;
         DataDB db;
 
         /// <summary>
@@ -39,11 +40,14 @@ namespace Truii_Demo_App
                 dsGrid.TableName = "DT";
             }
             dsGrid.SetMinimumHeight(Resources.DisplayMetrics.HeightPixels / 2);
-            btnCollect = FindViewById<Button>(Resource.Id.CollectBtn);
+            btnCollect = FindViewById<Button>(Resource.Id.btnGraph);
             btnCollect.Click += BtnCollect_Click;
 
-            btnGraph = FindViewById<Button>(Resource.Id.GraphBtn);
+            btnGraph = FindViewById<Button>(Resource.Id.btnGraph);
             btnGraph.Click += BtnGraph_Click;
+
+            btnReset = FindViewById<Button>(Resource.Id.btnReset);
+            btnReset.Click += BtnReset_Click;
         }
 
         /// <summary>
@@ -64,7 +68,12 @@ namespace Truii_Demo_App
         private void BtnGraph_Click(object sender, EventArgs e)
         {
             LineGraph();
-        }      
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            db.CreateDatabase();
+        }
 
         /// <summary>
         /// 
@@ -120,7 +129,7 @@ namespace Truii_Demo_App
             mRenderer.LabelsColor = Color.LightGray;
             for (int i = 0; i < db.Count(); i++)
             {
-                mRenderer.AddXTextLabel(i, db.readData("UserID", i).ToString());
+                mRenderer.AddXTextLabel(i, db.readPrimary("UserID", i));
             }
             mRenderer.AddSeriesRenderer(renderOne);
             mRenderer.AddSeriesRenderer(renderTwo);

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/CollectBtn"
+                android:id="@+id/btnCollect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Collect More Data"
@@ -25,10 +25,19 @@
                 android:layout_margin="25px"
                 tools:context=".HomeActivity" />
             <Button
-                android:id="@+id/GraphBtn"
+                android:id="@+id/btnGraph"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="View in Line Graph"
+                android:textAlignment="center"
+                android:layout_gravity="bottom"
+                android:layout_margin="25px"
+                tools:context=".HomeActivity" />
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset Database"
                 android:textAlignment="center"
                 android:layout_gravity="bottom"
                 android:layout_margin="25px"

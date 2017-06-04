@@ -69,13 +69,16 @@ namespace Truii_Demo_App
 		{
 			
 			// aapt resource value: 0x7f05000b
-			public const int CollectBtn = 2131034123;
-			
-			// aapt resource value: 0x7f05000c
-			public const int GraphBtn = 2131034124;
+			public const int btnCollect = 2131034123;
 			
 			// aapt resource value: 0x7f050009
 			public const int btnFinish = 2131034121;
+			
+			// aapt resource value: 0x7f05000c
+			public const int btnGraph = 2131034124;
+			
+			// aapt resource value: 0x7f05000d
+			public const int btnReset = 2131034125;
 			
 			// aapt resource value: 0x7f05000a
 			public const int dataGrid = 2131034122;
