@@ -10,6 +10,7 @@ using Android.Graphics;
 using Android.Content;
 using AChartEngine;
 using AChartEngine.Charts;
+using Android.Content.Res;
 
 namespace Truii_Demo_App
 {
@@ -43,7 +44,7 @@ namespace Truii_Demo_App
                 dsGrid.DataSource = new DataSet(this, listnum);
                 dsGrid.TableName = "DT";
             }
-
+            dsGrid.SetMinimumHeight(Resources.DisplayMetrics.HeightPixels / 2);
             btnCollect = FindViewById<Button>(Resource.Id.CollectBtn);
             btnCollect.Click += BtnCollect_Click;
 

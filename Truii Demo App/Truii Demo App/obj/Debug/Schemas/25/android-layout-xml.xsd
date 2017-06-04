@@ -5,7 +5,7 @@
   <xs:import schemaLocation="schemas.android.com.tools.xsd" namespace="http://schemas.android.com/tools" />
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>3/06/2017 9:43:02 PM</xs:documentation>
+    <xs:documentation>4/06/2017 2:25:20 PM</xs:documentation>
   </xs:annotation>
   <xs:group name="any-view">
     <xs:choice>
@@ -83,6 +83,13 @@
       <xs:element ref="TextSwitcher" />
       <xs:element ref="fragment" />
       <xs:element ref="org.achartengine.GraphicalView" />
+      <xs:element ref="DSoft.UI.Views.DSAbsoluteLayout" />
+      <xs:element ref="DSoft.UI.Views.DSNavigationBarView" />
+      <xs:element ref="DSoft.UI.Views.DSToolbarView" />
+      <xs:element ref="DSoft.UI.Grid.Views.DSGridCellView" />
+      <xs:element ref="DSoft.UI.Grid.Views.DSGridRowView" />
+      <xs:element ref="DSoft.UI.Grid.DSGridView" />
+      <xs:element ref="DSoft.UI.Core.DSTextView" />
       <xs:element ref="include" />
     </xs:choice>
   </xs:group>
@@ -1410,6 +1417,76 @@
   <xs:complexType name="org.achartengine.GraphicalView">
     <xs:complexContent mixed="false">
       <xs:extension base="View" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Views.DSAbsoluteLayout" type="DSoft.UI.Views.DSAbsoluteLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Views.DSAbsoluteLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Views.DSAbsoluteLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Views.DSNavigationBarView" type="DSoft.UI.Views.DSNavigationBarView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Views.DSNavigationBarView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Views.DSNavigationBarView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Views.DSToolbarView" type="DSoft.UI.Views.DSToolbarView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Views.DSToolbarView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Views.DSToolbarView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Grid.Views.DSGridCellView" type="DSoft.UI.Grid.Views.DSGridCellView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Grid.Views.DSGridCellView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Grid.Views.DSGridCellView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Grid.Views.DSGridRowView" type="DSoft.UI.Grid.Views.DSGridRowView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Grid.Views.DSGridRowView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Grid.Views.DSGridRowView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LinearLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Grid.DSGridView" type="DSoft.UI.Grid.DSGridView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Grid.DSGridView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Grid.DSGridView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DSoft.UI.Core.DSTextView" type="DSoft.UI.Core.DSTextView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: DSoft.UI.Core.DSTextView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DSoft.UI.Core.DSTextView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="TextView" />
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="include" type="include">

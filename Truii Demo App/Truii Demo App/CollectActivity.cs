@@ -25,12 +25,12 @@ namespace Truii_Demo_App
             base.OnCreate(bundle);
             SetContentView (Resource.Layout.Collect);
 
-            btnFinish = FindViewById<Button>(Resource.Id.FinishBtn);
+            btnFinish = FindViewById<Button>(Resource.Id.btnFinish);
             btnFinish.Click += BtnFinish_Click;
 
-            dataOne = FindViewById<EditText>(Resource.Id.DataWan);
-            dataTwo = FindViewById<EditText>(Resource.Id.DataToo);
-            dataThree = FindViewById<EditText>(Resource.Id.DataEee);
+            dataOne = FindViewById<EditText>(Resource.Id.txtDataOne);
+            dataTwo = FindViewById<EditText>(Resource.Id.txtDataTwo);
+            dataThree = FindViewById<EditText>(Resource.Id.txtDataThree);
         }
 
         private void BtnFinish_Click(object sender, EventArgs e)
