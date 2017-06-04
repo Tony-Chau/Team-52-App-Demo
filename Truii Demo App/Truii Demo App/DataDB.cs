@@ -28,6 +28,37 @@ namespace Truii_Demo_App
             connection = new SqliteConnection("Data Source=" + path);
             
         }
+
+        public int readData(string fieldName, int index)
+        {
+            int[] data = new int[Count()];
+            connection.Open();
+            try
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    
+                    command.CommandText = "SELECT * FROM Data";
+                    var read = command.ExecuteReader();
+                    int i = 0;
+                    while (read.Read())
+                    {
+                        data[i] = (int) read[fieldName];
+                        i += 1;
+                    }
+                    connection.Close();
+                    return data[index];
+                }
+            }
+            catch (Exception ex)
+            { 
+                Toast.MakeText(context, ex.Message, ToastLength.Short).Show();
+            }
+            connection.Close();
+            return -1;
+        }
+
+
         public async void CreateDatabase()
         {
             var connectionString = string.Format("Data Source={0};Version=3", path);
