@@ -11,6 +11,8 @@ using Android.Content;
 using AChartEngine;
 using AChartEngine.Charts;
 using Android.Content.Res;
+using Java.IO;
+using System.Collections.Generic;
 
 namespace Truii_Demo_App
 {
@@ -23,7 +25,6 @@ namespace Truii_Demo_App
         Button btnExport;
         Button btnReset;
         DataDB db;
-
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +77,35 @@ namespace Truii_Demo_App
 
         private void BtnExport_Click(object sender, EventArgs e)
         {
-            
+            File store = Android.OS.Environment.ExternalStorageDirectory;
+            File dir = new File(store.AbsoluteFile + "/Truii App Demo");
+            dir.Mkdirs();
+            File file = new File(dir, "DataTableExample.csv");
+            if (!file.Exists())
+            {
+                file.CreateNewFile();
+                file.Mkdirs();
+                FileWriter writer = new FileWriter(file);
+                writer.Write(csvCode());
+                writer.Flush();
+                writer.Close();
+            }
+            var alert = new AlertDialog.Builder(this);
+            alert.SetTitle("A file has been created");
+            alert.SetMessage("File is located at: " + dir.ToString());
+            alert.Show();
+        }
+        private string csvCode()
+        {
+            string file = "UserID, DataOne, DataTwo, DataThree\n";
+            for (int i = 0; i < db.Count(); i += 1)
+            {
+                file += db.readPrimary("UserID", i) + ", ";
+                file += db.readData("DataOne", i) + ", ";
+                file += db.readData("DataTwo", i) + ", ";
+                file += db.readData("DataThree", i) + ",\n";
+            }
+            return file;
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
