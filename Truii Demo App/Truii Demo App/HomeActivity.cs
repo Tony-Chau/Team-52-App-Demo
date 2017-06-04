@@ -30,7 +30,7 @@ namespace Truii_Demo_App
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView (Resource.Layout.Home);
+            SetContentView(Resource.Layout.Home);
             db = new DataDB(this);
 
             dsGrid = FindViewById<DSGridView>(Resource.Id.dataGrid);
@@ -40,7 +40,7 @@ namespace Truii_Demo_App
                 dsGrid.TableName = "DT";
             }
             dsGrid.SetMinimumHeight(Resources.DisplayMetrics.HeightPixels / 2);
-            btnCollect = FindViewById<Button>(Resource.Id.btnGraph);
+            btnCollect = FindViewById<Button>(Resource.Id.btnCollect);
             btnCollect.Click += BtnCollect_Click;
 
             btnGraph = FindViewById<Button>(Resource.Id.btnGraph);
@@ -73,6 +73,7 @@ namespace Truii_Demo_App
         private void BtnReset_Click(object sender, EventArgs e)
         {
             db.CreateDatabase();
+            OnResume();
         }
 
         /// <summary>
