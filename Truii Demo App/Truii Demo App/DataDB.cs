@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Mono.Data.Sqlite;
 using System.IO;
+using Android.Content;
 
 namespace Truii_Demo_App
 {
@@ -20,6 +20,10 @@ namespace Truii_Demo_App
         string path;
         SqliteConnection connection;
         Context context;
+        /// <summary>
+        /// This will initialise the connection to the database
+        /// </summary>
+        /// <param name="context">This will be used for the toast message that appears</param>
         public DataDB(Context context)
         {
             this.context = context;
@@ -29,6 +33,12 @@ namespace Truii_Demo_App
             
         }
 
+        /// <summary>
+        /// Reads the data from the list (treat this as an array)
+        /// </summary>
+        /// <param name="fieldName">The name of the field the user is getting</param>
+        /// <param name="index">The index number, similar to an array</param>
+        /// <returns></returns>
         public int readData(string fieldName, int index)
         {
             int[] data = new int[Count()];
@@ -58,7 +68,9 @@ namespace Truii_Demo_App
             return -1;
         }
 
-
+        /// <summary>
+        /// Creates the database
+        /// </summary>
         public async void CreateDatabase()
         {
             var connectionString = string.Format("Data Source={0};Version=3", path);
@@ -77,7 +89,7 @@ namespace Truii_Demo_App
                     await connect.OpenAsync();
                     using (var command = connect.CreateCommand())
                     {
-                        string QueryCommand = "CREATE TABLE Data(UserID INTEGER PRIMARY KEY AUTOINCREMENT, DataOne int NOT NULL, DataTwo int NOT NULL, DataThree int NOT NULL)";
+                        string QueryCommand = "CREATE TABLE Data(UserID int NOT NULL, DataOne int NOT NULL, DataTwo int NOT NULL, DataThree int NOT NULL)";
                         command.CommandText = QueryCommand;
                         command.CommandType = System.Data.CommandType.Text;
                         await command.ExecuteNonQueryAsync();
@@ -91,11 +103,18 @@ namespace Truii_Demo_App
             connection.Close();
         }
 
+        /// <summary>
+        /// Checks if the database has been created or not
+        /// </summary>
+        /// <returns></returns>
         public bool checkDb()
         {
             return File.Exists(path);
         }
-
+        /// <summary>
+        /// Counts the number of rows
+        /// </summary>
+        /// <returns></returns>
         public int Count()
         {
             int count = 0;
@@ -114,19 +133,26 @@ namespace Truii_Demo_App
                 }
             }catch(Exception ex)
             {
+                Toast.MakeText(this.context, ex.Message, ToastLength.Short).Show();
             }
             connection.Close();
             return count;
         }
+        /// <summary>
+        /// Insert the data
+        /// </summary>
+        /// <param name="dataOne">Insert DataOne</param>
+        /// <param name="dataTwo">Insert DataOne</param>
+        /// <param name="dataThree">Insert DataOne</param>
         public void InserData(int dataOne, int dataTwo, int dataThree)
         {
+            int count = Count();
             connection.Open();
             try
             {
                 using (var command = connection.CreateCommand())
                 {
-                    string QueryCommand = "INSERT INTO Data(DataOne, DataTwo, DataThree) VALUES(" + dataOne + ", " + dataTwo + ", " + dataThree + ")";
-                    command.CommandText = QueryCommand;
+                    command.CommandText = string.Format("INSERT INTO Data(UserID, DataOne, DataTwo, DataThree) VALUES( {0}, {1}, {2}, {3})", count, dataOne, dataTwo, dataThree);
                     var rowcount = command.ExecuteNonQuery();
                 }
             }catch (Exception ex)
