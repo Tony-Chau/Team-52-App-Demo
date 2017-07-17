@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Truii_Demo_App
 {
-    [Activity(Label = "Truii", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.NoTitleBar.Fullscreen")]
+    [Activity(Label = "Truii", MainLauncher = true, Icon = "@drawable/icon", NoHistory = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@android:style/Theme.NoTitleBar.Fullscreen")]
     public class SplashActivity : Activity
     {
         /// <summary>

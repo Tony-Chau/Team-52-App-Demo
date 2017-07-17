@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <ManifestDocuments>
+    <ManifestDocument>obj\Debug\__library_projects__\CircleButton\library_project_imports\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
+  <NativeLibraries />
+  <Jars>
+    <Jar>obj\Debug\__library_projects__\AChartEngine.Bindings.XamarinAndroid\library_project_imports\achartengine-1.1.0.jar</Jar>
+    <Jar>obj\Debug\__library_projects__\CircleButton\library_project_imports\bin\classes.jar</Jar>
+  </Jars>
+</Paths>

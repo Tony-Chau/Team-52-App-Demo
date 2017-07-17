@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +46,10 @@
   <ItemGroup>
     <Reference Include="AChartEngine.Bindings.XamarinAndroid">
       <HintPath>..\lib\android\AChartEngine.Bindings.XamarinAndroid.dll</HintPath>
+    </Reference>
+    <Reference Include="CircleButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircleButton.1.0.0\lib\CircleButton.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DSoft.Datatypes">
       <HintPath>..\lib\android\DSoft.Datatypes.dll</HintPath>
@@ -79,14 +83,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChartActivityAdapter.cs" />
     <Compile Include="DataDB.cs" />
     <Compile Include="Data\Grid\DataSet.cs" />
     <Compile Include="Data\Grid\DataTable.cs" />
     <Compile Include="HomeActivity.cs" />
     <Compile Include="CollectActivity.cs" />
+    <Compile Include="ChartActivity.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\TableItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -99,6 +106,13 @@
     <AndroidResource Include="Resources\layout\Collect.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\Chart.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Splash.axml">
@@ -116,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\truii_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets" Condition="Exists('..\packages\Mono.Data.Sqlite.Portable.1.0.3.5\tools\Mono.Data.Sqlite.Portable.targets')" />

@@ -74,7 +74,7 @@ namespace Truii_Demo_App
         /// <param name="e"></param>
         private void BtnGraph_Click(object sender, EventArgs e)
         {
-            LineGraph();
+            StartActivity(new Intent(Application.Context, typeof(ChartActivity)));
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Truii_Demo_App
                 btnGraph.Enabled = true;
             }
         }
-
+        /*
         /// <summary>
         /// This Function uses data from the database to consrtuct a graph
         /// Using the three: DataOne, DataTwo and DataThree as the series
@@ -234,7 +234,7 @@ namespace Truii_Demo_App
             sRender.PointStyle = PointStyle.Circle;
             sRender.Color = Color.Rgb(Red, Green, Blue);
             return sRender;
-        }
+        }*/
     }
 }
 

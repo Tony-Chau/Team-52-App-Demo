@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\CircleButton\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\DSoft.UI.Android\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\System.Data.Portable\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\System.Transactions.Portable\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\CircleButton\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\DSoft.UI.Android\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\System.Data.Portable\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\__library_projects__\System.Transactions.Portable\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\CircleButton.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\DSoft.UI.Android.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\System.Data.Portable.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Marcus\Documents\Semester 5\IFB398-IFB399\Group_52_TruiiDemoApp\Truii Demo App\Truii Demo App\obj\Debug\__library_projects__\System.Transactions.Portable.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>
