@@ -8,7 +8,11 @@ Android APK: https://drive.google.com/open?id=0BwKSsYk6BCZJUzBqSEZLVThTRkE
 
 If the APK file does not work, here is a link to a video demostrating how the app works
 
-Link to Video: https://www.youtube.com/watch?v=Q4DnWwlT6vU
+Link to Video
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Q4DnWwlT6vU"><img src="https://img.youtube.com/vi/Q4DnWwlT6vU/0.jpg" alt="App Demo"></a>
+</div>
 
 The instruction is on the .zip file 
 
